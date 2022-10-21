@@ -1,0 +1,14 @@
+nav a {
+    @apply transition-all;
+}
+
+a.active,
+a.active li,
+nav a:hover,
+nav a:hover>li,
+nav button:hover,
+nav button:focus,
+nav .active button {
+    @apply transition-all;
+    color: var(--color-primario);
+}

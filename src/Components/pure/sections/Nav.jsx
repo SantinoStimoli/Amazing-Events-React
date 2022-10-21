@@ -1,6 +1,9 @@
 import { Navbar } from 'flowbite-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Logo from '../../../resources/Logo Amazing Events.png'
+import '../../../Styles/nav.css'
+import NavDropdown from '../../container/NavDropdown';
 
 const Nav = () => {
     return (
@@ -10,21 +13,17 @@ const Nav = () => {
                 fluid={true}
                 rounded={true}
             >
-                <Navbar.Brand href="https://flowbite.com/">
+                <NavLink end to={'/'}>
                     <img
-                        src="https://flowbite.com/docs/images/logo.svg"
+                        src={Logo}
                         className="mr-3 h-6 sm:h-9"
-                        alt="Flowbite Logo"
+                        alt="Amazing Events Logo"
                     />
-                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        Flowbite
-                    </span>
-                </Navbar.Brand>
+                </NavLink>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
                     <NavLink end to={'/'}>Home</NavLink>
-                    <NavLink to={'/upcoming-events'}>Upcoming Events</NavLink>
-                    <NavLink to={'/past-events'}>Past Events</NavLink>
+                    <NavDropdown path={'/events'} />
                     <NavLink to={'/contact'}>Contact</NavLink>
                     <NavLink to={'/stats'}>Stats</NavLink>
                 </Navbar.Collapse>

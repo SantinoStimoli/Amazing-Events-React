@@ -2,7 +2,7 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-        <div>
+        <div className='container mx-auto px-2 py-2.5 sm:px-4'>
             <h1>Not Found</h1>
         </div>
     );

@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Card from '../Components/pure/card';
+import { obtainEvents } from '../service/obtainEvents';
 
 const UpcomingEvents = () => {
+    const [allEvents, setAllEvents] = useState([]);
+    const [upcomingEvents, setUpcomingEvents] = useState([]);
+
+    obtainEvents().then((response) => {
+        setAllEvents(response.data.events)
+        setUpcomingEvents(allEvents.filter(events => events.estimate))
+    })
     return (
-        <div>
-            <h1>Upcoming Events</h1>
+        <div className='flex flex-wrap justify-center'>
+            {upcomingEvents.map((event, index) => (
+                <Card key={index} event={event} />
+            ))}
         </div>
     );
 }
