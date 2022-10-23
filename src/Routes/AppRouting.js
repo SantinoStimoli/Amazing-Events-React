@@ -2,6 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "../Components/pure/sections/Footer";
 import Nav from "../Components/pure/sections/Nav";
+import AllEvents from "../Pages/All-Events";
 import Contact from "../Pages/Contact";
 import Details from "../Pages/Details";
 import Home from "../Pages/Home";
@@ -17,13 +18,14 @@ const AppRouting = () => {
             <Nav />
             <Routes>
 
-                <Route path="/" element={<Home />} ></Route>
-                <Route path="/events/upcoming" element={<UpcomingEvents />} ></Route>
-                <Route path="/events/past" element={<PastEvents />} ></Route>
-                <Route path="/contact" element={<Contact />} ></Route>
-                <Route path="/stats" element={<Stats />} ></Route>
-                <Route path="/details" element={<Details />} ></Route>
-                <Route path="*" element={<NotFound />} ></Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/events" element={<AllEvents />} />
+                <Route path="/events/upcoming" element={<UpcomingEvents />} />
+                <Route path="/events/past" element={<PastEvents />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/stats" element={<Stats />} />
+                <Route path="/details" element={<Details />} />
+                <Route path="*" element={<NotFound />} />
 
             </Routes>
             <Footer />

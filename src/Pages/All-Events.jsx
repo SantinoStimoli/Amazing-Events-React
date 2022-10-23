@@ -2,13 +2,13 @@ import React from 'react';
 import CardList from '../Components/container/card_list';
 import { EVENT_TYPE } from '../models/eventType.enum';
 
-const UpcomingEvents = () => {
+const AllEvents = () => {
     return (
         <div className='container mx-auto px-2 py-2.5 sm:px-4'>
-            <h1>Upcoming Events</h1>
-            <CardList eventType={EVENT_TYPE.UPCOMING} />
+            <h1>All Events</h1>
+            <CardList eventType={EVENT_TYPE.ALL} />
         </div>
     );
 }
 
-export default UpcomingEvents;
+export default AllEvents;

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { obtainEvents } from "../service/obtainEvents";
+import React from 'react';
 
 const Home = () => {
     return (
