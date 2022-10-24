@@ -42,7 +42,6 @@ const CardList = ({ eventType }) => {
             setFiltered(eventsDefined);
         } else {
             setFiltered(arrayFiltrado);
-            console.log(arrayFiltrado);
         }
     }
 

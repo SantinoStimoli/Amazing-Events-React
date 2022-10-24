@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { obtainCategories } from '../../service/obtainCategories';
 
 const Search = ({ setText, categories, setCategories, obtainSelectedCategories }) => {
