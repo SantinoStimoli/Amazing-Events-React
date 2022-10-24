@@ -11,6 +11,7 @@ const CardList = ({ eventType }) => {
     const [upcomingEvents, setUpcomingEvents] = useState([]);
     const [text, setText] = useState('');
     const [categories, setCategories] = useState([]);
+    const [filtered, setFiltered] = useState([]);
 
     const eventsDefined =
         eventType === 'Past' ? pastEvents :
@@ -23,14 +24,31 @@ const CardList = ({ eventType }) => {
             setPastEvents(allEvents.filter(events => events.assistance))
             setUpcomingEvents(allEvents.filter(events => events.estimate))
         })
+
+        eventType === 'All' ? setFiltered(allEvents) :
+            eventType === 'Past' ? setFiltered(pastEvents) :
+                setFiltered(upcomingEvents)
     }, []);
 
-    const filterEvents = eventsDefined.filter(event => linkOration(event.name).includes(linkOration(text)))
+    const filterEvents = filtered.filter(event => linkOration(event.name).includes(linkOration(text)))
 
+    function obtainSelectedCategories() {
+        let checkboxs = document.querySelectorAll("input[type='checkbox']")
+        let arrayChecboxs = Array.from(checkboxs)
+        let arrayCheckeds = arrayChecboxs.filter(checkbox => checkbox.checked)
+        let arrayCheckedsValues = arrayCheckeds.map(checkbox => checkbox.value)
+        let arrayFiltrado = eventsDefined.filter(e => arrayCheckedsValues.includes(e.category))
+        if (arrayFiltrado.length === 0) {
+            setFiltered(eventsDefined);
+        } else {
+            setFiltered(arrayFiltrado);
+            console.log(arrayFiltrado);
+        }
+    }
 
     return (
         <div className='my-10'>
-            <Search setText={setText} categories={categories} setCategories={setCategories} />
+            <Search setText={setText} categories={categories} setCategories={setCategories} obtainSelectedCategories={obtainSelectedCategories} />
             <div className='flex flex-wrap justify-center mt-5'>
 
                 {
