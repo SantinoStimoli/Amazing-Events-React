@@ -11,7 +11,7 @@ const Search = ({ setText, categories, setCategories, obtainSelectedCategories }
     return (
         <div>
             <input className='rounded-xl w-1/2' onChange={() => setText(inputRef.current.value)} ref={inputRef} type={'text'} />
-            <div classNam   e='flex flex-wrap justify-center mt-3'>
+            <div className='flex flex-wrap justify-center mt-3'>
                 {categories.map((category, index) => (
                     <label key={index} className='select-none cursor-pointer flex items-center'>
                         <input onChange={() => obtainSelectedCategories()} className='mx-2 cursor-pointer checkboxs' type={'checkbox'} name='categories' value={category} />

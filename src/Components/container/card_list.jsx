@@ -63,5 +63,4 @@ const CardList = ({ eventType }) => {
     );
 }
 
-
 export default CardList;

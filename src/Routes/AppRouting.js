@@ -24,7 +24,7 @@ const AppRouting = () => {
                 <Route path="/events/past" element={<PastEvents />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/stats" element={<Stats />} />
-                <Route path="/details" element={<Details />} />
+                <Route path="/events/:id" element={<Details />} />
                 <Route path="*" element={<NotFound />} />
 
             </Routes>

@@ -8,7 +8,7 @@ import NavDropdown from '../container/NavDropdown';
 const Nav = () => {
     return (
 
-        <div className='container mx-auto sticky top-0 shadow-personalizada'>
+        <div className='container mx-auto sticky top-0 shadow-personalizada z-10'>
             <Navbar
                 fluid={true}
                 rounded={true}

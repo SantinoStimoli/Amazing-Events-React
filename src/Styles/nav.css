@@ -12,3 +12,18 @@ nav .active button {
     @apply transition-all;
     color: var(--color-primario);
 }
+
+@media (max-width: 768px) {
+    ul {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+
+    ul>* {
+        margin-right: 2rem;
+    }
+
+    ul>:last-child {
+        margin-right: 0rem;
+    }
+}
