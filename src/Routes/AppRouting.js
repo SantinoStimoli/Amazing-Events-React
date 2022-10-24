@@ -1,7 +1,7 @@
 
 import { Route, Routes } from "react-router-dom";
-import Footer from "../Components/pure/sections/Footer";
-import Nav from "../Components/pure/sections/Nav";
+import Footer from "../Components/pure/Footer";
+import Nav from "../Components/pure/Nav";
 import AllEvents from "../Pages/All-Events";
 import Contact from "../Pages/Contact";
 import Details from "../Pages/Details";

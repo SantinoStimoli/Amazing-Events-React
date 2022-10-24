@@ -10,3 +10,7 @@ nav,
 footer {
     @apply select-none;
 }
+
+.shadow-personalizada {
+    box-shadow: var(--color-primario) 0px 1px 8px;
+}

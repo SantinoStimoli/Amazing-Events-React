@@ -14,6 +14,9 @@ const NavDropdown = ({ path }) => {
                 label="Events"
                 inline={true}
             >
+                <NavLink end to={'/events'}>
+                    <Dropdown.Item>All Events</Dropdown.Item>
+                </NavLink>
                 <NavLink to={'/events/upcoming'}>
                     <Dropdown.Item>Upcoming Events</Dropdown.Item>
                 </NavLink>

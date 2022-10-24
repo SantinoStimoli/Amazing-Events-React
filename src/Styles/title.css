@@ -1,0 +1,18 @@
+* {
+    @apply text-center;
+}
+
+h1 {
+    @apply font-extrabold select-none;
+    color: var(--color-primario);
+    font-size: 4rem;
+    letter-spacing: -2px;
+}
+
+p {
+    @apply mt-1;
+}
+
+.div-title {
+    @apply px-10;
+}

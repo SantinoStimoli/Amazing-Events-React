@@ -1,14 +1,14 @@
 import { Navbar } from 'flowbite-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../../resources/Logo Amazing Events.png'
-import '../../../Styles/nav.css'
-import NavDropdown from '../../container/NavDropdown';
+import Logo from '../../resources/Logo Amazing Events.png'
+import '../../Styles/nav.css'
+import NavDropdown from '../container/NavDropdown';
 
 const Nav = () => {
     return (
 
-        <div className='container mx-auto'>
+        <div className='container mx-auto sticky top-0 shadow-personalizada'>
             <Navbar
                 fluid={true}
                 rounded={true}
