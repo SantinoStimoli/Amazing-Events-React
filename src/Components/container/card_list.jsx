@@ -3,47 +3,46 @@ import { obtainEvents } from '../../service/obtainEvents';
 import Card from '../pure/Card';
 import Search from '../pure/Search';
 import { linkOration } from '../../service/linkOration';
+import { EVENT_TYPE } from '../../models/eventType.enum';
 
 const CardList = ({ eventType }) => {
 
-    const [allEvents, setAllEvents] = useState([]);
-    const [pastEvents, setPastEvents] = useState([]);
-    const [upcomingEvents, setUpcomingEvents] = useState([]);
-    const [text, setText] = useState('');
+    const [initialEvents, setInitialEvents] = useState([]);
     const [categories, setCategories] = useState([]);
     const [filtered, setFiltered] = useState([]);
-
-    const eventsDefined =
-        eventType === 'Past' ? pastEvents :
-            eventType === 'All' ? allEvents :
-                upcomingEvents
+    const [text, setText] = useState('');
 
     useEffect(() => {
         obtainEvents().then((response) => {
-            setAllEvents(response.data.events)
-            setPastEvents(allEvents.filter(events => events.assistance))
-            setUpcomingEvents(allEvents.filter(events => events.estimate))
+            if (eventType === EVENT_TYPE.ALL) {
+                setInitialEvents(response.data.events)
+                setFiltered(response.data.events)
+            }
+            if (eventType === EVENT_TYPE.PAST) {
+                setInitialEvents(response.data.events.filter(events => events.assistance))
+                setFiltered(response.data.events.filter(events => events.assistance))
+            }
+            if (eventType === EVENT_TYPE.UPCOMING) {
+                setInitialEvents(response.data.events.filter(events => events.estimate))
+                setFiltered(response.data.events.filter(events => events.estimate))
+            }
         })
-
-        eventType === 'All' ? setFiltered(allEvents) :
-            eventType === 'Past' ? setFiltered(pastEvents) :
-                setFiltered(upcomingEvents)
     }, []);
-
-    const filterEvents = filtered.filter(event => linkOration(event.name).includes(linkOration(text)))
 
     function obtainSelectedCategories() {
         let checkboxs = document.querySelectorAll("input[type='checkbox']")
         let arrayChecboxs = Array.from(checkboxs)
         let arrayCheckeds = arrayChecboxs.filter(checkbox => checkbox.checked)
         let arrayCheckedsValues = arrayCheckeds.map(checkbox => checkbox.value)
-        let arrayFiltrado = eventsDefined.filter(e => arrayCheckedsValues.includes(e.category))
+        let arrayFiltrado = initialEvents.filter(e => arrayCheckedsValues.includes(e.category))
         if (arrayFiltrado.length === 0) {
-            setFiltered(eventsDefined);
+            setFiltered(initialEvents);
         } else {
             setFiltered(arrayFiltrado);
         }
     }
+
+    const filterEvents = filtered.filter(event => linkOration(event.name).includes(linkOration(text)))
 
     return (
         <div className='my-10'>
