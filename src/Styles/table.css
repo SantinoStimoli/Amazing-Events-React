@@ -12,12 +12,12 @@ h2 {
 }
 
 td {
-    @apply px-1 text-sm tracking-tighter;
+    @apply px-1 py-4 text-sm tracking-tighter;
     border: 1px solid var(--color-primario);
 }
 
 thead tr td {
-    @apply text-white;
+    @apply text-white text-lg;
     background: var(--color-primario);
     opacity: 0.8;
 }
