@@ -2,18 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { obtainEvents } from '../../service/obtainEvents';
 import { obtainCategories } from '../../service/obtainCategories';
 import Table from '../pure/Table';
+import { moneyFormater } from '../../service/moneyFormat';
+import { numberFormater } from '../../service/numberFormat';
 
 const StatsTable = () => {
 
     const [events, setEvents] = useState([]);
     const [categories, setCategories] = useState([]);
-    // const [food, setFood] = useState([]);
-    // const [museum, setMuseum] = useState([]);
-    // const [party, setParty] = useState([]);
-    // const [music, setMusic] = useState([]);
-    // const [race, setRace] = useState([]);
-    // const [book, setBook] = useState([]);
-    // const [cinema, setCinema] = useState([]);
 
     useEffect(() => {
         obtainEvents().then((response) => {
@@ -41,7 +36,7 @@ const StatsTable = () => {
                 total = totalToCompare
                 categoryOfTotal = category
             }
-            innerText = categoryOfTotal + ': ' + total
+            innerText = categoryOfTotal + ': ' + numberFormater(total)
             return innerText
         })
 
@@ -67,6 +62,25 @@ const StatsTable = () => {
         return allAssistance
     }
 
+    function obtainEventMaxAssistance() {
+        let total = 0;
+        let innerText = ''
+        let totalToCompare = 0;
+
+        events.forEach(event => {
+            totalToCompare = parseInt(event.assistance ? event.assistance : event.estimate)
+
+            if (total < totalToCompare) {
+                total = totalToCompare
+                innerText = event.name + ': ' + numberFormater(total)
+            }
+
+            return innerText
+        })
+
+        return innerText
+    }
+
     function obtainMaxRevenue() {
         let total = 0;
         let categoryOfTotal = '';
@@ -84,7 +98,7 @@ const StatsTable = () => {
                 total = totalToCompare
                 categoryOfTotal = category
             }
-            innerText = categoryOfTotal + ': ' + total
+            innerText = categoryOfTotal + ': ' + moneyFormater(total)
             return innerText
         })
         return innerText
@@ -109,10 +123,63 @@ const StatsTable = () => {
         return allRevenue
     }
 
+    function obtainEventMaxRevenue() {
+        let total = 0;
+        let innerText = ''
+        let totalToCompare = 0;
+
+        events.forEach(event => {
+            totalToCompare = parseInt((event.assistance ? event.assistance : event.estimate) * event.price)
+
+            if (total < totalToCompare) {
+                total = totalToCompare
+                innerText = event.name + ': ' + moneyFormater(total)
+            }
+
+            return innerText
+        })
+
+        return innerText
+    }
+
+    function obtainCategoriesStats(category) {
+        let assistance = 0;
+        let pastEvents = 0;
+        let estimate = 0;
+        let upcomingEvents = 0;
+        let revenues = 0;
+        let filtrado = events.filter(event => event.category === category)
+
+
+        filtrado.forEach(event => {
+            let sumarAssistance = event.assistance === undefined ? 0 : parseInt(event.assistance)
+            assistance = assistance + sumarAssistance
+            pastEvents = pastEvents + (sumarAssistance === 0 ? 0 : 1)
+
+            let sumarEstimate = event.assistance === undefined ? parseInt(event.estimate) : 0
+            estimate = estimate + sumarEstimate
+            upcomingEvents = upcomingEvents + (sumarEstimate === 0 ? 0 : 1)
+
+            let sumarRevenues = event.assistance ? (parseInt(event.assistance) * event.price) : (parseInt(event.estimate) * event.price)
+            revenues = revenues + sumarRevenues
+            return assistance, estimate, revenues, pastEvents
+        })
+
+        let response = {
+            category: category,
+            pastEvents: pastEvents,
+            assistance: assistance,
+            upcomingEvents: upcomingEvents,
+            estimate: estimate,
+            revenues: revenues,
+        }
+
+        return response
+    }
 
     return (
         <div>
-            <Table maxAssistance={obtainMaxAssistance()} maxRevenue={obtainMaxRevenue()} totalAssistance={obtainTotalAssistance()} totalRevenue={obtainTotalRevenue()} />
+            <Table maxAssistance={obtainMaxAssistance()} maxRevenue={obtainMaxRevenue()} totalAssistance={obtainTotalAssistance()} totalRevenue={obtainTotalRevenue()} eventMaxAssistance={obtainEventMaxAssistance()} eventMaxRevenue={obtainEventMaxRevenue()} obtainCategoriesStats={obtainCategoriesStats} categories={categories} />
         </div>
     );
 }
