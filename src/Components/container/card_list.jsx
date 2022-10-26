@@ -6,7 +6,7 @@ import { linkOration } from '../../service/linkOration';
 import { EVENT_TYPE } from '../../models/eventType.enum';
 import badSearch from '../../resources/badSearch.jpg'
 
-const CardList = ({ eventType }) => {
+const CardList = ({ eventType, setLoader }) => {
 
     const [initialEvents, setInitialEvents] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -14,20 +14,21 @@ const CardList = ({ eventType }) => {
     const [text, setText] = useState('');
 
     useEffect(() => {
-        obtainEvents().then((response) => {
-            if (eventType === EVENT_TYPE.ALL) {
-                setInitialEvents(response.data.events)
-                setFiltered(response.data.events)
-            }
-            if (eventType === EVENT_TYPE.PAST) {
-                setInitialEvents(response.data.events.filter(events => events.assistance))
-                setFiltered(response.data.events.filter(events => events.assistance))
-            }
-            if (eventType === EVENT_TYPE.UPCOMING) {
-                setInitialEvents(response.data.events.filter(events => events.estimate))
-                setFiltered(response.data.events.filter(events => events.estimate))
-            }
-        })
+        obtainEvents()
+            .then((response) => {
+                if (eventType === EVENT_TYPE.ALL) {
+                    setInitialEvents(response.data.events)
+                    setFiltered(response.data.events)
+                }
+                if (eventType === EVENT_TYPE.PAST) {
+                    setInitialEvents(response.data.events.filter(events => events.assistance))
+                    setFiltered(response.data.events.filter(events => events.assistance))
+                }
+                if (eventType === EVENT_TYPE.UPCOMING) {
+                    setInitialEvents(response.data.events.filter(events => events.estimate))
+                    setFiltered(response.data.events.filter(events => events.estimate))
+                }
+            })
     }, []);
 
     function obtainSelectedCategories() {

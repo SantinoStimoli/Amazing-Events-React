@@ -16,8 +16,8 @@ const DetailCard = ({ event }) => {
                                 <span className="text-gray-600">{event.date}</span>
                             </span>
                         </div>
-                        <p className="text-lg text-left tracking-tighter">{event.description}</p>
-                        <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                        <p className="text-lg text-center tracking-tighter">{event.description}</p>
+                        <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 justify-center">
                             <div className="flex">
                                 <span className="mr-3"><b>Capacity:</b> {event.capacity}</span>
                             </div>
