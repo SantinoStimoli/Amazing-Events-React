@@ -53,10 +53,21 @@ footer {
 .links,
 .color-personalizado,
 b {
-    fill: var(--color-primario);
     color: var(--color-primario);
 }
 
 .bg-personalizado {
     background: var(--color-primario);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width:640px) {
+
+    nav a,
+    nav button {
+        font-size: 12px;
+    }
 }

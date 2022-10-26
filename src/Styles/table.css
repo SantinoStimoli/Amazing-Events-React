@@ -21,3 +21,24 @@ thead tr td {
     background: var(--color-primario);
     opacity: 0.8;
 }
+
+@media (max-width: 640px) {
+    td {
+        @apply leading-tight py-2 text-xs;
+    }
+
+    thead tr td {
+        @apply leading-tight text-sm;
+    }
+}
+
+@media (max-width: 420px) {
+    td {
+        @apply p-0 py-1;
+        font-size: 9px;
+    }
+
+    thead tr td {
+        font-size: 10px;
+    }
+}

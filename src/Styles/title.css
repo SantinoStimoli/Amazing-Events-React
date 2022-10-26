@@ -12,7 +12,3 @@ h1 {
 p {
     @apply mt-1;
 }
-
-.div-title {
-    @apply px-10;
-}

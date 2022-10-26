@@ -9,7 +9,7 @@ const Table = ({ maxAssistance, maxRevenue, totalAssistance, totalRevenue, event
     return (
         <div>
             <section>
-                <h2>General Stats</h2>
+                <h2 className='max-sm:text-3xl'>General Stats</h2>
                 <table>
                     <thead>
                         <tr>
@@ -44,7 +44,7 @@ const Table = ({ maxAssistance, maxRevenue, totalAssistance, totalRevenue, event
             </section>
 
             <section>
-                <h2>Categories Stats</h2>
+                <h2 className='max-sm:text-3xl'>Categories Stats</h2>
                 <table>
                     <thead>
                         <tr>
