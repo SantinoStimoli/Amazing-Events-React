@@ -11,7 +11,7 @@ const Footer = () => {
                     alt="Amazing Events Logo"
                     width={30}
                 />
-                <p className="ml-2 text-sm text-center text-gray-500 dark:text-gray-400 ">
+                <p className="ml-2 text-sm text-center text-gray-500 dark:text-gray-400 copy">
                     &copy; 2022 Santino Stimoli. All rights reserved.
                 </p>
             </div>
