@@ -287,3 +287,11 @@ b {
         stroke-dashoffset: 1165;
     }
 }
+
+.carousel .snap-mandatory {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+}

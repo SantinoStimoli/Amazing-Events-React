@@ -6,7 +6,7 @@ import Image3 from '../../resources/image3.jpg'
 
 const CarouselHome = () => {
     return (
-        <div className="h-64 sm:h-80 xl:h-96 2xl:h-96">
+        <div className="h-64 sm:h-80 xl:h-96 2xl:h-96 carousel">
             <Carousel slideInterval={5000}
                 leftControl=" "
                 rightControl=" "
