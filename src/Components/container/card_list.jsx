@@ -4,6 +4,7 @@ import Card from '../pure/Card';
 import Search from '../pure/Search';
 import { linkOration } from '../../service/linkOration';
 import { EVENT_TYPE } from '../../models/eventType.enum';
+import badSearch from '../../resources/badSearch.jpg'
 
 const CardList = ({ eventType }) => {
 
@@ -51,7 +52,10 @@ const CardList = ({ eventType }) => {
 
                 {
                     filterEvents.length === 0 ?
-                        <p>There are no posts matching your search</p> :
+                        <div className='my-10 flex justify-center flex-col '>
+                            <h2 className='text-3xl max-md:text-2xl px-4 mb-4'>There are no posts matching your search</h2>
+                            <img className='w-3/5 mx-auto' src={badSearch} />
+                        </div> :
                         filterEvents.map((event, index) => (
                             <Card key={index} event={event} />
                         ))
