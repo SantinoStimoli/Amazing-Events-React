@@ -6,7 +6,7 @@ import Title from '../Components/pure/Title';
 
 const Home = () => {
     return (
-        <div className='container mx-auto px-2 sm:px-4'>
+        <div className='container mx-auto'>
             <CarouselHome />
             <div className='sm:mt-16 mt-3 mb-8 px-5'>
                 <Title>

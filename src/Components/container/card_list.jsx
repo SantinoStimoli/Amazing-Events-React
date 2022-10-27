@@ -5,6 +5,7 @@ import Search from '../pure/Search';
 import { linkOration } from '../../service/linkOration';
 import { EVENT_TYPE } from '../../models/eventType.enum';
 import badSearch from '../../resources/badSearch.jpg'
+import { useLocation } from 'react-router-dom';
 
 const CardList = ({ eventType, setLoader }) => {
 
@@ -46,6 +47,22 @@ const CardList = ({ eventType, setLoader }) => {
 
     const filterEvents = filtered.filter(event => linkOration(event.name).includes(linkOration(text)))
 
+    function addFavorite(event) {
+        localStorage.setItem('favorites', JSON.stringify(event))
+        console.log(localStorage.getItem('favorites'));
+    }
+
+    function removeFavorite() {
+        localStorage.removeItem('favorites')
+        console.log(localStorage.getItem('favorites'));
+    }
+
+    const location = useLocation();
+    function backOfDetails() {
+        let exLocation = location.pathname
+        localStorage.setItem('exLocation', exLocation)
+    }
+
     return (
         <div className='my-10'>
             <Search setText={setText} categories={categories} setCategories={setCategories} obtainSelectedCategories={obtainSelectedCategories} />
@@ -58,7 +75,7 @@ const CardList = ({ eventType, setLoader }) => {
                             <img className='w-3/5 mx-auto' src={badSearch} />
                         </div> :
                         filterEvents.map((event, index) => (
-                            <Card key={index} event={event} />
+                            <Card key={index} event={event} addFavorite={addFavorite} removeFavorite={removeFavorite} backOfDetails={backOfDetails} />
                         ))
                 }
 
