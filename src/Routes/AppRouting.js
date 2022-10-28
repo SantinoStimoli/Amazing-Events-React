@@ -14,19 +14,21 @@ import UpcomingEvents from "../Pages/Upcoming-Events"
 
 const AppRouting = () => {
 
+    const domain = '/Amazing-Events-React'
+
     return (
         <div>
             <Nav />
             <Routes>
 
-                <Route path="/" element={<Home />} />
-                <Route path="/events" element={<AllEvents />} />
-                <Route path="/events/upcoming" element={<UpcomingEvents />} />
-                <Route path="/events/past" element={<PastEvents />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/stats" element={<Stats />} />
-                <Route path="/events/:id" element={<Details />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path={domain + "/"} element={<Home />} />
+                <Route path={domain + "/events"} element={<AllEvents />} />
+                <Route path={domain + "/events/upcoming"} element={<UpcomingEvents />} />
+                <Route path={domain + "/events/past"} element={<PastEvents />} />
+                <Route path={domain + "/contact"} element={<Contact />} />
+                <Route path={domain + "/stats"} element={<Stats />} />
+                <Route path={domain + "/events/:id"} element={<Details />} />
+                <Route path={domain + "*"} element={<NotFound />} />
 
             </Routes>
             <Footer />
