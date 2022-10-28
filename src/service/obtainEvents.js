@@ -1,7 +1,7 @@
-import { Axios } from "axios"
+import axios from "axios"
 
 const URL = 'https://amazing-events.herokuapp.com/api/events'
 
 export function obtainEvents() {
-    return Axios.get(URL)
+    return axios.get(URL)
 }
