@@ -4,6 +4,8 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const NavDropdown = ({ path }) => {
 
+    const domain = '/Amazing-Events-React'
+
     let actualPath = useLocation().pathname
     let dropdownRef = useRef('')
 
@@ -14,14 +16,14 @@ const NavDropdown = ({ path }) => {
                 label="Events"
                 inline={true}
             >
-                <NavLink end to={'/events'}>
+                <NavLink end to={domain + '/events'}>
                     <Dropdown.Item>All Events</Dropdown.Item>
                 </NavLink>
-                <NavLink to={'/events/upcoming'}>
+                <NavLink to={domain + '/events/upcoming'}>
                     <Dropdown.Item>Upcoming Events</Dropdown.Item>
                 </NavLink>
 
-                <NavLink to={'/events/past'}>
+                <NavLink to={domain + '/events/past'}>
                     <Dropdown.Item>Past Events</Dropdown.Item>
                 </NavLink>
 

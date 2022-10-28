@@ -4,10 +4,7 @@ import NotFoundImg from "../../resources/notFound.jpg";
 
 const NotFoundComponent = () => {
     return (
-        <div className='h-80vh flex justify-center items-center'>
-            <Title title={'Not Found'} >
-                <img src={NotFoundImg} />
-            </Title>
+        <div className='h-80vh flex justify-center items-center bg-contain bg-center bg-no-repeat my-10' style={{ backgroundImage: `url(${NotFoundImg})` }}>
         </div>
     );
 }

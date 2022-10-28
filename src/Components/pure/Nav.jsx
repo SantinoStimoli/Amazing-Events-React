@@ -6,14 +6,16 @@ import '../../Styles/nav.css'
 import NavDropdown from '../container/NavDropdown';
 
 const Nav = () => {
-    return (
 
+    const domain = '/Amazing-Events-React'
+
+    return (
         <div className='container mx-auto sticky top-0 shadow-personalizada z-10'>
             <Navbar
                 fluid={true}
                 rounded={true}
             >
-                <NavLink end to={'/'}>
+                <NavLink end to={domain + '/'}>
                     <img
                         src={Logo}
                         className="mr-3 h-6 sm:h-9"
@@ -22,10 +24,10 @@ const Nav = () => {
                 </NavLink>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <NavLink end to={'/'}>Home</NavLink>
-                    <NavDropdown path={'/events'} />
-                    <NavLink to={'/contact'}>Contact</NavLink>
-                    <NavLink to={'/stats'}>Stats</NavLink>
+                    <NavLink end to={domain + '/'}>Home</NavLink>
+                    <NavDropdown path={domain + '/events'} />
+                    <NavLink to={domain + '/contact'}>Contact</NavLink>
+                    <NavLink to={domain + '/stats'}>Stats</NavLink>
                 </Navbar.Collapse>
             </Navbar>
         </div>

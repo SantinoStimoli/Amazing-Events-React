@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Amazing-Events-React/static/css/main.52a02c88.css",
-    "main.js": "/Amazing-Events-React/static/js/main.1a3f59b0.js",
+    "main.css": "/Amazing-Events-React/static/css/main.addf8991.css",
+    "main.js": "/Amazing-Events-React/static/js/main.8c43c67d.js",
     "static/js/787.8a7a7fd6.chunk.js": "/Amazing-Events-React/static/js/787.8a7a7fd6.chunk.js",
     "static/media/past.jpg": "/Amazing-Events-React/static/media/past.4d6b8b66db654bc9c9a6.jpg",
     "static/media/all.jpg": "/Amazing-Events-React/static/media/all.5f582757e6513e1f7702.jpg",
     "static/media/image2.jpg": "/Amazing-Events-React/static/media/image2.544178dc4ee8fc1cb0ec.jpg",
-    "static/media/notFound.jpg": "/Amazing-Events-React/static/media/notFound.b5d3d19e725445f3be7d.jpg",
     "static/media/badSearch.jpg": "/Amazing-Events-React/static/media/badSearch.f04db350f2e0906350b8.jpg",
     "static/media/upcoming.jpg": "/Amazing-Events-React/static/media/upcoming.5c90159f0df5cc5749ca.jpg",
     "static/media/image3.jpg": "/Amazing-Events-React/static/media/image3.5c0eb9aaf936531fa890.jpg",
+    "static/media/notFound.jpg": "/Amazing-Events-React/static/media/notFound.cffa487ba024f83959b9.jpg",
     "static/media/Montserrat-ExtraBold.otf": "/Amazing-Events-React/static/media/Montserrat-ExtraBold.d99c8d2310096179f6ab.otf",
     "static/media/Montserrat-Medium.otf": "/Amazing-Events-React/static/media/Montserrat-Medium.41d5bfd1ec5f3024faa0.otf",
     "static/media/image1.jpg": "/Amazing-Events-React/static/media/image1.273bad09ce1f2add53af.jpg",
     "static/media/Logo Amazing Events.png": "/Amazing-Events-React/static/media/Logo Amazing Events.2aa009ae8793ba8d51db.png",
     "index.html": "/Amazing-Events-React/index.html",
-    "main.52a02c88.css.map": "/Amazing-Events-React/static/css/main.52a02c88.css.map",
-    "main.1a3f59b0.js.map": "/Amazing-Events-React/static/js/main.1a3f59b0.js.map",
+    "main.addf8991.css.map": "/Amazing-Events-React/static/css/main.addf8991.css.map",
+    "main.8c43c67d.js.map": "/Amazing-Events-React/static/js/main.8c43c67d.js.map",
     "787.8a7a7fd6.chunk.js.map": "/Amazing-Events-React/static/js/787.8a7a7fd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52a02c88.css",
-    "static/js/main.1a3f59b0.js"
+    "static/css/main.addf8991.css",
+    "static/js/main.8c43c67d.js"
   ]
 }
