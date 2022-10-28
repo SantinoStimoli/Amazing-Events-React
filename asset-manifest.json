@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Amazing-Events-React/static/css/main.52a02c88.css",
-    "main.js": "/Amazing-Events-React/static/js/main.ea736b52.js",
+    "main.css": "/Amazing-Events-React/static/css/main.addf8991.css",
+    "main.js": "/Amazing-Events-React/static/js/main.8c43c67d.js",
     "static/js/787.8a7a7fd6.chunk.js": "/Amazing-Events-React/static/js/787.8a7a7fd6.chunk.js",
     "static/media/past.jpg": "/Amazing-Events-React/static/media/past.4d6b8b66db654bc9c9a6.jpg",
     "static/media/all.jpg": "/Amazing-Events-React/static/media/all.5f582757e6513e1f7702.jpg",
@@ -15,12 +15,12 @@
     "static/media/image1.jpg": "/Amazing-Events-React/static/media/image1.273bad09ce1f2add53af.jpg",
     "static/media/Logo Amazing Events.png": "/Amazing-Events-React/static/media/Logo Amazing Events.2aa009ae8793ba8d51db.png",
     "index.html": "/Amazing-Events-React/index.html",
-    "main.52a02c88.css.map": "/Amazing-Events-React/static/css/main.52a02c88.css.map",
-    "main.ea736b52.js.map": "/Amazing-Events-React/static/js/main.ea736b52.js.map",
+    "main.addf8991.css.map": "/Amazing-Events-React/static/css/main.addf8991.css.map",
+    "main.8c43c67d.js.map": "/Amazing-Events-React/static/js/main.8c43c67d.js.map",
     "787.8a7a7fd6.chunk.js.map": "/Amazing-Events-React/static/js/787.8a7a7fd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52a02c88.css",
-    "static/js/main.ea736b52.js"
+    "static/css/main.addf8991.css",
+    "static/js/main.8c43c67d.js"
   ]
 }
