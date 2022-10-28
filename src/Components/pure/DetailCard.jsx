@@ -8,9 +8,9 @@ const DetailCard = ({ event }) => {
         <section className="text-gray-600 body-font overflow-hidden">
             <div className="container py-16 mx-auto">
                 <div className="w-auto flex flex-col mx-auto justify-center">
-                    <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded-lg mx-auto" src={event.image} />
-                    <div className="lg:w-1/2 w-full lg:py-6 mt-6 lg:mt-0 mx-auto">
-                        <h2 className="text-sm title-font text-gray-500 tracking-widest -mb-2 text-center">{event.category}</h2>
+                    <div className="lg:w-1/2 w-full h-64 object-cover object-center rounded-lg mx-auto bg-cover bg-no-repeat bg-top" style={{ backgroundImage: `url(${event.image})` }} />
+                    <div className="lg:w-1/2 w-full lg:py-6 mt-6 lg:mt-0 mx-auto px-5">
+                        <h2 className="text-sm title-font text-gray-500 tracking-widest mb-0 text-center">{event.category}</h2>
                         <h1 className="color-personalizado text-4xl tracking-normal font-black">{event.name}</h1>
                         <div className="flex mb-4">
                             <span className="flex items-center mx-auto mt-1">
